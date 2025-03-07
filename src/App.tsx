@@ -1,12 +1,16 @@
 import { Grid, GridItem, Show, Stack } from "@chakra-ui/react";
 import NavBar from "./components/ui/NavBar";
+import GameGrid from "./components/GameGrid";
 
 const App = () => {
   return (
     <>
       <Grid
         // templateAreas={[`"nav nav"  "aside main"`]}
-        templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+        templateAreas={{
+          base: `"nav" "main"`,
+          lg: `"nav nav" "aside main"`,
+        }}
       >
         <GridItem area="nav">
           <NavBar></NavBar>
@@ -19,7 +23,7 @@ const App = () => {
         {/* </Stack> */}
 
         <GridItem area="main" bg="dodgerblue">
-          Main
+          <GameGrid></GameGrid>
         </GridItem>
       </Grid>
     </>
