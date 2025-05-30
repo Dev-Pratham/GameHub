@@ -7,7 +7,11 @@ const ColorModeSwitch = () => {
   return (
     <HStack>
       {/* main container of switch */}
-      <Switch.Root checked={colorMode === "dark"} onChange={toggleColorMode}>
+      <Switch.Root
+        checked={colorMode === "dark"}
+        onChange={toggleColorMode}
+        colorScheme="white"
+      >
         {/* hidden input for accesibility and form interraction */}
         <Switch.HiddenInput />
         {/* control is visual representation of switch */}
