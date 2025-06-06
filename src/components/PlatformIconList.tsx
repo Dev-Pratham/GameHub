@@ -31,7 +31,7 @@ const PlatformIconList = ({ parent_platforms }: Props) => {
 
   return (
     <>
-      <HStack>
+      <HStack marginY={"2.5"}>
         {parent_platforms.map(({ platform }) => {
           // return <Text>{platform.platform.slug}</Text>
           //agar nahi hai toh return null warna application crach hojaiga
