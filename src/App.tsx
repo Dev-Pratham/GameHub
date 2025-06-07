@@ -18,13 +18,13 @@ const App = () => {
 
         {/* <Stack hideBelow={["lg"]}> */}
 
-        <GridItem area="aside" bg="gold" hideBelow={["lg"]}>
+        <GridItem area="aside" hideBelow={["lg"]}>
           Aside
         </GridItem>
 
         {/* </Stack> */}
 
-        <GridItem area="main" bg="dodgerblue">
+        <GridItem area="main">
           <GameGrid></GameGrid>
         </GridItem>
       </Grid>
