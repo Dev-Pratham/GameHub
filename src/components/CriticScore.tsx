@@ -6,8 +6,9 @@ interface Props {
 }
 
 const CritcScore = ({ metacritic }: Props) => {
+  const color = metacritic > 75 ? "green" : metacritic > 60 ? "yellow" : "red";
   return (
-    <Badge justifyContent={"center"} w={10} size="lg">
+    <Badge color={color} justifyContent={"center"} w={10} size="lg">
       {metacritic}
     </Badge>
   );
