@@ -1,12 +1,17 @@
-import { HStack, Skeleton, SkeletonText, Stack } from "@chakra-ui/react";
+import { Card, Skeleton, SkeletonText } from "@chakra-ui/react";
+
 const GameCardSkeleton = () => {
   return (
-    <Stack gap="6" maxW="xs">
-      <Skeleton height="325px" width="408px" borderRadius={10} />
-      <HStack width="full">
-        <SkeletonText noOfLines={2} />
-      </HStack>
-    </Stack>
+    // The width value is arbitrary, adjust as needed
+    <Card.Root width={285}>
+      <Card.Header />
+      {/* The height value is arbitrary  */}
+      <Skeleton height="200px" />
+      <Card.Body>
+        <SkeletonText />
+      </Card.Body>
+      <Card.Footer />
+    </Card.Root>
   );
 };
 

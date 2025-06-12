@@ -9,19 +9,12 @@ const GameGrid = () => {
 
   return (
     <>
-      {loading && (
-        <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
-          padding={5}
-          gap={10}
-        >
-          {Array.from({ length: 20 }).map((_, index) => (
-            <GameCardSkeleton key={index} />
-          ))}
-        </SimpleGrid>
-      )}
       {error && <Text>{error}</Text>}
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} gap={10} padding={5}>
+        {loading &&
+          Array.from({ length: 20 }).map((_, index) => (
+            <GameCardSkeleton key={index} />
+          ))}
         {games.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
