@@ -17,7 +17,8 @@ const GameCard = ({ game }: Props) => {
   );
   return (
     <Card.Root
-      maxW="sm"
+      // maxW="sm"
+      width={"100%"}
       overflow="hidden"
       borderRadius={10}
       _hover={{ boxShadow }}

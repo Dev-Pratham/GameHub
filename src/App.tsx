@@ -12,8 +12,11 @@ const App = () => {
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
         }}
+        //basically we define the column sizes
         templateColumns={{
+          //single column
           base: "1fr",
+          //2 col first 200 and second 1fr
           lg: "200px 1fr",
         }}
       >
