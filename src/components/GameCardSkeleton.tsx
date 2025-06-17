@@ -6,7 +6,7 @@ const GameCardSkeleton = () => {
     // In this case the width is set to 100% to fill the parent container
     // This is a skeleton card component that mimics the structure of the GameCard
     <Card.Root width="100%">
-      <Card.Header />
+      {/* <Card.Header /> */}
       {/* The height value is arbitrary  */}
       <Skeleton height="200px" />
       <Card.Body>
