@@ -36,7 +36,7 @@ const PlatformIconList = ({ parent_platforms }: Props) => {
           // return <Text>{platform.platform.slug}</Text>
           //agar nahi hai toh return null warna application crach hojaiga
           if (!iconMap[platform.slug]) return null;
-          return <Icon as={iconMap[platform.slug]} />;
+          return <Icon key={platform.id} as={iconMap[platform.slug]} />;
         })}
       </HStack>
     </>
