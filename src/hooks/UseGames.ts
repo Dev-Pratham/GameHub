@@ -39,7 +39,7 @@ const UseGames = (
       .get<FetchGamesResponse>("/games", {
         // params: { genres: selectedGenres?.id },
         signal: controller.signal,
-        ...requestConfig,
+        ...requestConfig, //spread the request config to allow passing additional params
       })
       .then((response) => {
         setGames(response.data.results);
