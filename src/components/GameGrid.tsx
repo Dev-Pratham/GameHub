@@ -9,7 +9,10 @@ interface Props {
 }
 const GameGrid = ({ selectedGenres }: Props) => {
   //custom hook for seperaation of concerns
-  const { games, error, loading } = UseGames(selectedGenres);
+  const { games, error, loading } = UseGames(selectedGenres, {
+    //AXIOS request config
+    params: { genres: selectedGenres?.id },
+  });
 
   return (
     <>

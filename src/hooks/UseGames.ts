@@ -23,6 +23,8 @@ interface FetchGamesResponse {
 }
 
 const UseGames = (
+  //have passed the selected genres as a parameter because we want to refetch the games
+  // whenever the selected genres change
   selectedGenres: Genres | null,
   requestConfig?: AxiosRequestConfig
 ) => {
@@ -35,7 +37,7 @@ const UseGames = (
     const controller = new AbortController();
     apiClient
       .get<FetchGamesResponse>("/games", {
-        params: { genres: selectedGenres?.id },
+        // params: { genres: selectedGenres?.id },
         signal: controller.signal,
         ...requestConfig,
       })
