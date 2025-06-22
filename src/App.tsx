@@ -3,9 +3,10 @@ import NavBar from "./components/ui/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenresList from "./components/GenresList";
 import { useState } from "react";
+import { Genres } from "./hooks/UseGenres";
 
 const App = () => {
-  const [selectedGenres, setSelectedGenres] = useState(null);
+  const [selectedGenres, setSelectedGenres] = useState<Genres | null>(null);
   return (
     <>
       <Grid
@@ -39,7 +40,7 @@ const App = () => {
         {/* </Stack> */}
 
         <GridItem area="main">
-          <GameGrid></GameGrid>
+          <GameGrid selectedGenres={selectedGenres}></GameGrid>
         </GridItem>
       </Grid>
     </>
