@@ -26,6 +26,7 @@ const UseGames = (
   //have passed the selected genres as a parameter because we want to refetch the games
   // whenever the selected genres change
   selectedGenres: Genres | null,
+  selectedPlatforms: Platform | null,
   requestConfig?: AxiosRequestConfig
 ) => {
   const [games, setGames] = useState<Game[]>([]);
@@ -52,7 +53,7 @@ const UseGames = (
       });
 
     return () => controller.abort();
-  }, [selectedGenres]);
+  }, [selectedGenres?.id, selectedPlatforms?.id]);
 
   return { games, error, loading };
 };

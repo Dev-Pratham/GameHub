@@ -2,7 +2,12 @@ import usePlatforms, { platforms } from "@/hooks/UsePlatfroms";
 import { Box, Button, Menu, Portal } from "@chakra-ui/react";
 import { RiArrowRightLine } from "react-icons/ri";
 
-const Platform = () => {
+interface Props {
+  onSelectPlatform: (platform: platforms) => void;
+  selectedPlaform: platforms | null;
+}
+
+const Platform = ({ onSelectPlatform, selectedPlaform }: Props) => {
   const { platforms, error } = usePlatforms();
 
   if (error) return null;
@@ -12,14 +17,19 @@ const Platform = () => {
       <Menu.Root>
         <Menu.Trigger asChild>
           <Button colorPalette="gray" variant="outline">
-            Platforms <RiArrowRightLine />
+            {selectedPlaform ? selectedPlaform.name : "Platforms"}
+            <RiArrowRightLine />
           </Button>
         </Menu.Trigger>
         <Portal>
           <Menu.Positioner>
             <Menu.Content>
               {platforms.map((platforms) => (
-                <Menu.Item key={platforms.id} value={platforms.slug}>
+                <Menu.Item
+                  key={platforms.id}
+                  value={platforms.slug}
+                  onClick={() => onSelectPlatform(platforms)}
+                >
                   {platforms.name}
                 </Menu.Item>
               ))}
