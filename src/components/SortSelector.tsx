@@ -29,8 +29,7 @@ const SortSelector = ({ onselectedMenu, selectedSort }: Props) => {
       <Menu.Root>
         <Menu.Trigger asChild>
           <Button variant="outline" size="sm">
-            {selectedSort?.label || "Order by : Relevance"}
-            <RiArrowDownLine />
+            Order by : {selectedSort?.label || "Relevance"} <RiArrowDownLine />
           </Button>
           {/* <RiArrowRightLine /> */}
         </Menu.Trigger>
