@@ -18,6 +18,7 @@ const Platform = ({ onSelectPlatform, selectedPlaform }: Props) => {
         <Menu.Trigger asChild>
           <Button colorPalette="gray" variant="outline">
             {selectedPlaform ? selectedPlaform.name : "Platforms"}
+            {/* {selectedPlaform?.name || "Platforms"} */}
             <RiArrowRightLine />
           </Button>
         </Menu.Trigger>
