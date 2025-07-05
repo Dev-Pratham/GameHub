@@ -1,6 +1,6 @@
 import usePlatforms, { platforms } from "@/hooks/UsePlatfroms";
 import { Box, Button, Menu, Portal } from "@chakra-ui/react";
-import { RiArrowRightLine } from "react-icons/ri";
+import { RiArrowDownLine } from "react-icons/ri";
 
 interface Props {
   onSelectPlatform: (platform: platforms) => void;
@@ -19,7 +19,7 @@ const Platform = ({ onSelectPlatform, selectedPlaform }: Props) => {
           <Button colorPalette="gray" variant="outline">
             {selectedPlaform ? selectedPlaform.name : "Platforms"}
             {/* {selectedPlaform?.name || "Platforms"} */}
-            <RiArrowRightLine />
+            <RiArrowDownLine />
           </Button>
         </Menu.Trigger>
         <Portal>

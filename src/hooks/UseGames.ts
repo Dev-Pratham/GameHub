@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 import { Genres } from "./UseGenres";
+import { SortOption } from "@/components/SortSelector";
 //seperation of concerns
 
 export interface Platform {
@@ -27,6 +28,7 @@ const UseGames = (
   // whenever the selected genres change
   selectedGenres: Genres | null,
   selectedPlatforms: Platform | null,
+  selectedSort: SortOption | null,
   requestConfig?: AxiosRequestConfig
 ) => {
   const [games, setGames] = useState<Game[]>([]);
@@ -53,7 +55,7 @@ const UseGames = (
       });
 
     return () => controller.abort();
-  }, [selectedGenres?.id, selectedPlatforms?.id]);
+  }, [selectedGenres?.id, selectedPlatforms?.id, selectedSort?.value]);
 
   return { games, error, loading };
 };

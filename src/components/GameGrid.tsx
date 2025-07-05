@@ -4,19 +4,30 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { Genres } from "../hooks/UseGenres";
 import { platforms } from "@/hooks/UsePlatfroms";
+import { SortOption } from "./SortSelector";
 
 interface Props {
   selectedGenres: Genres | null;
   selectedPlatforms: platforms | null;
+  selectedSort: SortOption | null;
 }
-const GameGrid = ({ selectedGenres, selectedPlatforms }: Props) => {
+const GameGrid = ({
+  selectedGenres,
+  selectedPlatforms,
+  selectedSort,
+}: Props) => {
   //custom hook for seperaation of concerns
   const { games, error, loading } = UseGames(
     selectedGenres,
     selectedPlatforms,
+    selectedSort,
     {
       //AXIOS request config
-      params: { genres: selectedGenres?.id, platforms: selectedPlatforms?.id },
+      params: {
+        genres: selectedGenres?.id,
+        platforms: selectedPlatforms?.id,
+        ordering: selectedSort?.value,
+      },
     }
   );
 
