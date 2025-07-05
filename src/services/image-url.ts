@@ -1,6 +1,8 @@
+import noimg from "../assets/noimg.webp";
+
 const getCroppedImageUrl = (url: string) => {
   //some games do not have a background image, so we return an empty string
-  if (!url) return "";
+  if (!url) return noimg;
   const index = url.lastIndexOf("media");
 
   const firstCroppedUrl = url.slice(0, index + "media".length);
