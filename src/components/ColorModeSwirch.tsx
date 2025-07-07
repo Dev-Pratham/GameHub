@@ -19,7 +19,7 @@ const ColorModeSwitch = () => {
           <Switch.Thumb />
         </Switch.Control>
         {/* label provides text description */}
-        <Switch.Label>Dark Mode</Switch.Label>
+        <Switch.Label whiteSpace={"nowrap"}>Dark Mode</Switch.Label>
       </Switch.Root>
     </HStack>
   );
