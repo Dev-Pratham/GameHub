@@ -29,6 +29,7 @@ const UseGames = (
   selectedGenres: Genres | null,
   selectedPlatforms: Platform | null,
   selectedSort: SortOption | null,
+  searchTerm: string | "",
   requestConfig?: AxiosRequestConfig
 ) => {
   const [games, setGames] = useState<Game[]>([]);
@@ -55,7 +56,12 @@ const UseGames = (
       });
 
     return () => controller.abort();
-  }, [selectedGenres?.id, selectedPlatforms?.id, selectedSort?.value]);
+  }, [
+    selectedGenres?.id,
+    selectedPlatforms?.id,
+    selectedSort?.value,
+    searchTerm,
+  ]);
 
   return { games, error, loading };
 };

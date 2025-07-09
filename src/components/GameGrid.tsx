@@ -10,23 +10,27 @@ interface Props {
   selectedGenres: Genres | null;
   selectedPlatforms: platforms | null;
   selectedSort: SortOption | null;
+  searchTerm: string | "";
 }
 const GameGrid = ({
   selectedGenres,
   selectedPlatforms,
   selectedSort,
+  searchTerm = "",
 }: Props) => {
   //custom hook for seperaation of concerns
   const { games, error, loading } = UseGames(
     selectedGenres,
     selectedPlatforms,
     selectedSort,
+    searchTerm,
     {
       //AXIOS request config
       params: {
         genres: selectedGenres?.id,
         platforms: selectedPlatforms?.id,
         ordering: selectedSort?.value,
+        search: searchTerm,
       },
     }
   );

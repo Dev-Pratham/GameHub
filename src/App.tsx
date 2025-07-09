@@ -5,7 +5,6 @@ import GenresList from "./components/GenresList";
 import { useState } from "react";
 import { Genres } from "./hooks/UseGenres";
 import Platform from "./components/Platform";
-// import { Platform } from "./hooks/UseGames";
 import { platforms } from "./hooks/UsePlatfroms";
 import SortSelector, { SortOption } from "./components/SortSelector";
 
@@ -15,6 +14,7 @@ const App = () => {
     null
   );
   const [selectedSort, setSelectedSort] = useState<SortOption | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>("");
   return (
     <>
       <Grid
@@ -32,7 +32,7 @@ const App = () => {
         }}
       >
         <GridItem area="nav">
-          <NavBar></NavBar>
+          <NavBar onSearch={(searchTerm) => setSearchTerm(searchTerm)}></NavBar>
         </GridItem>
 
         {/* <Stack hideBelow={["lg"]}> */}
@@ -64,6 +64,7 @@ const App = () => {
             selectedGenres={selectedGenres}
             selectedPlatforms={selectedPlatforms}
             selectedSort={selectedSort}
+            searchTerm={searchTerm}
           ></GameGrid>
         </GridItem>
       </Grid>
