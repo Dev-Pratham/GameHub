@@ -7,6 +7,7 @@ import { Genres } from "./hooks/UseGenres";
 import Platform from "./components/Platform";
 import { platforms } from "./hooks/UsePlatfroms";
 import SortSelector, { SortOption } from "./components/SortSelector";
+import Header from "./components/ui/Header";
 
 const App = () => {
   const [selectedGenres, setSelectedGenres] = useState<Genres | null>(null);
@@ -49,6 +50,14 @@ const App = () => {
         {/* </Stack> */}
 
         <GridItem area="main">
+          <Header
+            heading={{
+              selectedGenres,
+              selectedPlatforms,
+              selectedSort,
+              searchTerm,
+            }}
+          />
           <HStack>
             <Platform
               onSelectPlatform={(platform) => setSelectedPlatfroms(platform)}
