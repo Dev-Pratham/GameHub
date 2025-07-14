@@ -24,7 +24,8 @@ const Emoji = ({ ratings_count }: Props) => {
   };
 
   const emoji = emojiMap[Math.floor(ratings_count / 1000)];
-
+  //Math floor rounds down to the nearest integer
+  if (!emoji) return null; // Return null if no emoji is found for the ratings count
   return <Icon as={emoji.icon} boxSize={"25px"}></Icon>;
 };
 
