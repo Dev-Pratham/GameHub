@@ -5,6 +5,7 @@ import PlatformIconList from "./PlatformIconList";
 import CritcScore from "./CriticScore";
 import { useColorModeValue } from "./ui/color-mode";
 import getCroppedImageUrl from "../services/image-url";
+import Emoji from "./Emoji";
 
 interface Props {
   game: Game;
@@ -31,6 +32,7 @@ const GameCard = ({ game }: Props) => {
           <PlatformIconList parent_platforms={game.parent_platforms} />
           <CritcScore metacritic={game.metacritic}></CritcScore>
         </HStack>
+        <Emoji ratings_count={game.ratings_count} />
       </Card.Body>
       <Card.Footer gap="2"></Card.Footer>
     </Card.Root>
