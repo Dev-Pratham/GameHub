@@ -20,11 +20,9 @@ interface Props {
 const Header = ({ heading }: Props) => {
   return (
     <Box m={5}>
-      <Text fontWeight={"bold"} fontSize={"2xl"}>
-        {heading?.searchTerm || ""}
-        {heading.selectedGenres?.name || ""}
-        {heading.selectedPlatforms?.name || ""}
-        {heading.selectedSort?.label || ""} Games
+      <Text fontWeight={"bold"} fontSize={"4xl"}>
+        {heading?.searchTerm || ""} {heading.selectedGenres?.name || ""}{" "}
+        {heading.selectedPlatforms?.name || ""} {"Games"}
       </Text>
     </Box>
   );
